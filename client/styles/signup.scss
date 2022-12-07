@@ -16,7 +16,7 @@ body {
     background-color: $background;
 }
 
-#login {
+#signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,16 +26,12 @@ body {
     background-color: $background;
 }
 
-#login h1 {
-    color:$primaryFont;
-}
-
-#inner-login p {
+#inner-signup p {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#inner-login {
+#inner-signup {
     background-color: $loginBackground;
     padding: 80px 125px 80px 125px;
     color: $secondaryFont;
@@ -43,18 +39,19 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#inner-login h1 {
-    margin-bottom: 5px;
+#inner-signup h1 {
+    margin-bottom: 15px;
+    color: $primaryFont;
 }
 
-#login-form {
+#signup-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#login-form input {
+#signup-form input {
     margin-top: 10px;
     width: 190px;
     height: 23px;
@@ -62,7 +59,7 @@ body {
     border-radius: 3%;
 }
 
-#login-form button {
+#signup-form button {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 3px;
@@ -73,14 +70,26 @@ body {
     background-color:#F4D06F;
 }
 
-#sign-up a{
+#signup-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#signup-submit button:hover {
+    background-color: $primaryFont;
+}
+
+#signup-submit a{
     color: $primaryFont
 }
 
-#sign-up a:hover{
+#signup-submit a:hover{
     color: $primaryFontlite
 }
 
-#sign-up a:visited{
+#signup-submit a:visited{
     color: $primaryFontlite
 }

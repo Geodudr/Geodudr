@@ -34,7 +34,8 @@ const Login = (props) => {
   return (
     <div id='login'>
       <div id="inner-login">
-        <h1>VidChatter</h1>
+        <h1>Jushin</h1>
+        <p>An Elegant Chat Reception App</p>
         <div id="login-form">
           <input id='username' type='text' placeholder='Username'></input>
           <input id='password' type='password' placeholder='Password'></input>
@@ -42,7 +43,6 @@ const Login = (props) => {
         </div>
         <div id="sign-up">
           <Link to="/signup">Signup</Link>
-          <a href='/signup' id='signup-anchor'>Signup</a>
         </div>
       </div>
     </div>
