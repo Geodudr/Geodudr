@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+$primaryFont: #F4D06F;
+$primaryFontlite: #f5e484;
+$secondaryFont: #fcfcfc;
+$background: #363537;
+$loginBackground: #8AA1B1;
+
+* {
+    margin: 0;
+}
+
+body {  
+    font-family: 'Poppins', serif;
+    color:#202124;
+    background-color: $background;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    background-color: $background;
+}
+
+#login h1 {
+    color:$primaryFont;
+}
+
+#inner-login p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#inner-login {
+    background-color: $loginBackground;
+    padding: 80px 125px 80px 125px;
+    color: $secondaryFont;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#inner-login h1 {
+    margin-bottom: 15px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form input {
+    margin-top: 10px;
+    width: 190px;
+    height: 23px;
+    border: none;
+    border-radius: 3%;
+}
+
+#login-form button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 3px;
+    width: 75px;
+    border: none;
+    border-radius: 5%;
+    color: $secondaryFont;
+    background-color:#F4D06F;
+}
+
+#signup-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#signup-div button:hover {
+    background-color: $primaryFont;
+}
+
+#signup-anchor {
+    color: $secondaryFont
+}
+
+#signup-anchor:hover{
+    color: $primaryFont;
+}
+#signup-anchor:visited{
+    color: $primaryFontlite
+}
