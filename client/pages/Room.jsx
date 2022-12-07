@@ -40,7 +40,9 @@ const Room = () => {
   }, [])
 
   return (
-    <video autoPlay muted playsInline ref={localVideoRef} />
+    <div id="video-grid">
+      <video autoPlay muted playsInline ref={localVideoRef} />
+    </div>
   );
 };
 
