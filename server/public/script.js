@@ -1,7 +1,7 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer(undefined, {
-  host: '/',
+  host: 'chattrbox.onrender.com/',
   port: '3005'
 })
 const myVideo = document.createElement('video')
