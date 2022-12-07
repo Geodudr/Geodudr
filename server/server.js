@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const PORT = 3000;
+const userController = require('./controllers/userController');
+//const authController = require('./controllers/authController');
 const app = express();
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
@@ -24,6 +26,16 @@ app.use((req, res, next) => {
       res.status(200);
       next();
     });
+
+// signup router, direct to /login endpoint if success
+app.post('/signup', userController.createUser, (req, res) => {
+  return res.status(201).json(res.locals.newUser);
+});
+// signin router, direct to root endpoint if success
+app.post('/login', userController.loginUser, (req, res) => {
+  res.locals.loginStatus === false ? res.status(200).json('log in failed') : res.status(200).redirect('/');
+});
+
 
 app.get('/', (req, res) => {
   res.redirect(`/${uuidV4()}`)
