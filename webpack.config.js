@@ -7,17 +7,17 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
   },
   mode: process.env.NODE_ENV,
   devServer: {
-    static: {
-      directory: path.join(__dirname, './build'),
-      publicPath: '/',
-    },
-    // port: 3000,
+    host: 'localhost',
+    port: 8080,
     proxy: {
-      '/api/**': 'http://localhost:3000',
+      '/': {
+        target: 'http://localhost:8080/',
+        router: () => 'http://localhost:3000',
+      }
+      
     },
   },
   module: {
@@ -28,6 +28,18 @@ const config = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.ejs$/,
+        use: {
+          loader: 'ejs-loader',
+          options: {
+            variable: 'data',
+            interpolate : '\\{\\{(.+?)\\}\\}',
+            evaluate : '\\[\\[(.+?)\\]\\]'
           },
         },
         exclude: /node_modules/,
@@ -47,7 +59,8 @@ const config = {
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
-  plugins: [new HtmlWebpackPlugin({ template: './client/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: './client/html.ejs' })],
 };
 
 module.exports = config;

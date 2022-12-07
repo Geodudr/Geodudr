@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.querySelector('#root'));
-console.log(root);
+console.log('this is the root ', root);
 root.render(
-  <div>
-    <h1>Working</h1>
-    <p>THIS IS WORKING!</p>
+  <Router>
     <App />
-  </div>
+  </Router>
 );
