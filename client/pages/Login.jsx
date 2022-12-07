@@ -25,7 +25,7 @@ const sendUser = async (user, pass, navigate) => {
   const data = response.data;
   console.log(data, 'data');
   // create route to main page
-  navigate('/main');
+  navigate('/room');
   return;
 };
 

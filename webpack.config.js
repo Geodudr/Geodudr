@@ -7,7 +7,6 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
   },
   mode: process.env.NODE_ENV,
   devServer: {
@@ -34,6 +33,18 @@ const config = {
         exclude: /node_modules/,
       },
       {
+        test: /\.ejs$/,
+        use: {
+          loader: 'ejs-loader',
+          options: {
+            variable: 'data',
+            interpolate : '\\{\\{(.+?)\\}\\}',
+            evaluate : '\\[\\[(.+?)\\]\\]'
+          },
+        },
+        exclude: /node_modules/,
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -48,7 +59,8 @@ const config = {
     ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
-  plugins: [new HtmlWebpackPlugin({ template: './client/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: './client/html.ejs' })],
 };
 
 module.exports = config;
