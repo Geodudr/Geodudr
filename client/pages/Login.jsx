@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import style from '../styles/login.scss';
+import { Link } from 'react-router-dom';
 
 const loginSubmit = (navigate) => {
     const user = document.getElementById('username');
@@ -19,13 +20,12 @@ const loginSubmit = (navigate) => {
 
 const sendUser = async (user, pass, navigate) => {
   const userData = { username: user, password: pass };
-  const response = await axios.post('/users/login', userData);
+  const response = await axios.post('/login', userData);
   // all the data associated with that username
   const data = response.data;
   console.log(data, 'data');
   // create route to main page
   navigate('/main');
-  dispatch(data);
   return;
 };
 
@@ -41,6 +41,7 @@ const Login = (props) => {
           <button id='login-submit' onClick={() => loginSubmit(props.navigate)}>Login</button>
         </div>
         <div id="sign-up">
+          <Link to="/signup">Signup</Link>
           <a href='/signup' id='signup-anchor'>Signup</a>
         </div>
       </div>

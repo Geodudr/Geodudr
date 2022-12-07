@@ -11,13 +11,14 @@ const config = {
   },
   mode: process.env.NODE_ENV,
   devServer: {
-    static: {
-      directory: path.join(__dirname, './build'),
-      publicPath: '/',
-    },
-    // port: 3000,
+    host: 'localhost',
+    port: 8080,
     proxy: {
-      '/api/**': 'http://localhost:3000',
+      '/': {
+        target: 'http://localhost:8080/',
+        router: () => 'http://localhost:3000',
+      }
+      
     },
   },
   module: {
