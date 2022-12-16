@@ -1,5 +1,5 @@
-# SumTing
-## An app that does something for someone
+# Jushin
+## Online web reception chat room
 ### Get started:
 1. clone this repo
 2. ```npm install``` - make sure "peer" is installed.
